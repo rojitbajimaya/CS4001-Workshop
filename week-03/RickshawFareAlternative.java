@@ -5,7 +5,7 @@ public class RickshawFareAlternative{
     public static void main(String[] args){
     
     final double BASE_FARE = 25.0d; 
-    final double nightFare= 500.0d;
+    final double NIGHT_FARE= 500.0d;
 
     double totalFare = 0.00d;           //Declaration of Base Price and Night Fare. (Both have constant values)
     
@@ -38,7 +38,7 @@ public class RickshawFareAlternative{
     //Calculating fare based on distance and time only. No additional fares for night travel or discount for locals.
     
     totalFare = (isLocalChar == 'Y' || isLocalChar == 'y' ) ? (totalFare * 0.9) : totalFare;
-    totalFare = (isNightChar == 'Y' || isNightChar == 'y' ) ? (totalFare + nightFare) : totalFare;
+    totalFare = (isNightChar == 'Y' || isNightChar == 'y' ) ? (totalFare + NIGHT_FARE) : totalFare;
     
     //Calculating the total fare after local's discount and addition of night fares if needed.
     
