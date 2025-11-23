@@ -26,10 +26,14 @@ public class RickshawFare{
     String isNight = input.next();          //Input from Scanner to check if the customer is travelling at night.
     
     input.close();
+
+
+    double distanceFare = distance * 20.0d;
+    double timeFare = (time * 1.50d);
+    //Time and Distance Fare added, could be changed according to preference.
     
-    totalFare = BASE_FARE + ( distance * time );
-    
-    //Calculating fare based on distance and time only. No additional fares for night travel or discount for locals.
+    totalFare = BASE_FARE + distanceFare + timeFare ;
+    //Calculating fare based on distance and time with its fares included. No additional fares for night travel or discount for locals.
     
     /*
     totalFare = (isLocal == "Y" || isLocal == "y") ? (totalFare * 0.9) : totalFare;
