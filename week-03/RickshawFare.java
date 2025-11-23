@@ -5,19 +5,17 @@ public class RickshawFare{
     public static void main(String[] args){
     
     final double BASE_FARE = 25.0d;
-    final double nightFare= 500.0d;
+    final double NIGHT_FARE= 500.0d;
     
-    double discountFare = 0.00d;
-    double finalFare = 0.00d;
     double totalFare = 0.00d;           //Declaration of Base Price and Night Fare. (Both have constant values)
     
     Scanner input = new Scanner(System.in);
     
     System.out.println("Enter the distance in kilometers: ");
-    int distance = input.nextInt();          //Input from Scanner for distance in kilometers.
+    int distance = input.nextDouble();          //Input from Scanner for distance in kilometers.
     
     System.out.println("Enter the time in minutes: ");
-    int time = input.nextInt();              //Input from Scanner for time in minutes.
+    int time = input.nextDouble();              //Input from Scanner for time in minutes.
     
     System.out.println("Enter if the customer is local or not(Y/N): ");
     String isLocal = input.next();          //Input from Scanner to check if the customer is local.
@@ -26,7 +24,6 @@ public class RickshawFare{
     String isNight = input.next();          //Input from Scanner to check if the customer is travelling at night.
     
     input.close();
-
 
     double distanceFare = distance * 20.0d;
     double timeFare = (time * 1.50d);
@@ -37,7 +34,7 @@ public class RickshawFare{
     
     /*
     totalFare = (isLocal == "Y" || isLocal == "y") ? (totalFare * 0.9) : totalFare;
-    totalFare = (isNight == "Y" || isLocal == "y") ? (totalFare + nightFare) : totalFare;
+    totalFare = (isNight == "Y" || isLocal == "y") ? (totalFare + NIGHT_FARE) : totalFare;
     
     only if both string variables refer to the exact same object in memory. 
     This is generally not recommended for comparing string content, as two strings with 
@@ -49,7 +46,7 @@ public class RickshawFare{
      */ 
     
     totalFare = (isLocal.equals("Y") ||isLocal.equals("y")) ?  (totalFare * 0.9) : totalFare;
-    totalFare = (isNight.equals("Y") ||isNight.equals("y")) ?  (totalFare + nightFare) : totalFare;
+    totalFare = (isNight.equals("Y") ||isNight.equals("y")) ?  (totalFare + NIGHT_FARE) : totalFare;
     
     //Calculating the total fare after local's discount and addition of night fares if needed.
     
